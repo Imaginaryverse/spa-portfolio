@@ -12,13 +12,14 @@ enum Routes {
 }
 
 const StyledNavigationHeader = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
-  left: 0;
+  z-index: 100;
   width: 100%;
   max-width: 1440px;
   min-height: 100px;
   height: 100px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;

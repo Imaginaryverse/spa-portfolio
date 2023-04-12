@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Icon, Text } from '@src/components/common';
+import { Icon, Section, Text } from '@src/components/common';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -28,21 +28,9 @@ const StyledAvatar = styled.img`
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 `;
 
-const StyledSection = styled.section`
-  width: 100%;
-  padding: ${({ theme }) => theme.spacing.M} 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  gap: ${({ theme }) => theme.spacing.M};
-`;
-
 const BioSection: FunctionComponent = () => {
   return (
-    <StyledSection>
+    <Section>
       <Text variant='h3'>
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
         Bio
@@ -57,15 +45,16 @@ const BioSection: FunctionComponent = () => {
       <Text>
         I've been working as a professional developer since the summer of 2021,
         and am currently employed at Bright Energy AB. My current work involves
-        B2B integrations and mobile/web development.
+        B2B integrations and mobile/web development. I'm also development lead
+        for an administation tool for the company and our clients.
       </Text>
-    </StyledSection>
+    </Section>
   );
 };
 
 const ProjectsSection: FunctionComponent = () => {
   return (
-    <StyledSection>
+    <Section>
       <Text variant='h3'>
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
         Projects
@@ -77,13 +66,13 @@ const ProjectsSection: FunctionComponent = () => {
         </a>
         .
       </Text>
-    </StyledSection>
+    </Section>
   );
 };
 
 const ContactSection: FunctionComponent = () => {
   return (
-    <StyledSection>
+    <Section>
       <Text variant='h3'>
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
         Contact
@@ -98,7 +87,7 @@ const ContactSection: FunctionComponent = () => {
         </a>
         .
       </Text>
-    </StyledSection>
+    </Section>
   );
 };
 

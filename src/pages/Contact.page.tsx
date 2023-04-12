@@ -1,6 +1,10 @@
-import { FunctionComponent } from 'react';
-import { Page } from '@src/components/common';
+import React, { FunctionComponent } from 'react';
+import { Text } from '@src/components/common';
 
 export const ContactPage: FunctionComponent = () => {
-  return <Page>Contact me!</Page>;
+  return (
+    <React.Fragment>
+      <Text variant='h1'>Contact</Text>
+    </React.Fragment>
+  );
 };

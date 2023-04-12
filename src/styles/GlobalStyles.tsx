@@ -52,5 +52,9 @@ export const GlobalStyles = createGlobalStyle`
         }
       }
     }
+
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 `;

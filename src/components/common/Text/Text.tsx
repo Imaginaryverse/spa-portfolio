@@ -99,7 +99,7 @@ const StyledText = styled.p<TextProps>`
   margin-left: ${({ margin }) => margin?.left};
   margin-right: ${({ margin }) => margin?.right};
 
-  opacity: ${({ opaque }) => (opaque ? 0.75 : 1)};
+  opacity: ${({ opaque }) => (opaque ? 0.65 : 1)};
 
   // max 75 characters per line
   max-width: calc(75ch + 1rem);
