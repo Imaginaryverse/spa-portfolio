@@ -204,7 +204,7 @@ const StyledHamburgerIcon = styled.div`
 `;
 
 export const Navigation: FunctionComponent = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
   const { width } = useWindowSize();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -217,6 +217,12 @@ export const Navigation: FunctionComponent = () => {
       setIsMenuOpen(false);
     }
   }, [width]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [location]);
 
   return (
     <StyledNavigationHeader>
@@ -231,7 +237,7 @@ export const Navigation: FunctionComponent = () => {
 
       <StyledHamburgerMenu className={isMenuOpen ? 'open' : ''}>
         {Object.entries(Routes).map(([key, value]) => {
-          const isActive = pathname === value;
+          const isActive = location.pathname === value;
 
           return (
             <StyledNavLink
@@ -248,7 +254,7 @@ export const Navigation: FunctionComponent = () => {
 
       <StyledNav>
         {Object.entries(Routes).map(([key, value]) => {
-          const isActive = pathname === value;
+          const isActive = location.pathname === value;
 
           return (
             <StyledNavLink
