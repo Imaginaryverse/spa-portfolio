@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Anchor, Icon, Section, Text } from '@src/components/common';
-import avatar from '@src/assets/avatar.jpeg';
+import avatar from '@src/assets/avatar.png';
 
 const StyledHeader = styled.header`
   width: 100%;
