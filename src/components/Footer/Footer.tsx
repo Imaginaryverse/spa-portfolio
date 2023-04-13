@@ -2,7 +2,7 @@ import { useThemeMode } from '@src/context/ThemeModeProvider';
 import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Icon } from '../common';
+import { Text, Icon } from '../common';
 
 const StyledFooter = styled.footer`
   height: max-content;
@@ -129,6 +129,10 @@ export const Footer: FunctionComponent = () => {
             Switch mode
           </StyledFooterThemeSwitch>
         </StyledFooterColumn>
+
+        <Text variant='label' opaque>
+          © 2021 Anton Bertilsson
+        </Text>
       </StyledFooterContent>
     </StyledFooter>
   );
