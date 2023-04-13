@@ -126,7 +126,7 @@ export const Footer: FunctionComponent = () => {
         </StyledFooterColumn>
         <StyledFooterColumn>
           <StyledFooterThemeSwitch onClick={() => switchThemeMode()}>
-            Switch mode
+            Switch theme
           </StyledFooterThemeSwitch>
         </StyledFooterColumn>
 

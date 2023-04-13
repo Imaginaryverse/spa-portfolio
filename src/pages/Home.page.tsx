@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Anchor, Icon, Section, Text } from '@src/components/common';
+import avatar from '@src/assets/avatar.jpeg';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -42,18 +43,27 @@ const BioSection: FunctionComponent = () => {
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
         Biography
       </Text>
+
       <Text>
-        I'm a fullstack developer from Stockholm, Sweden, whose primary tech
-        stack includes React, Node.js and TypeScript. I combine my creative
-        energy, and passion for web development and psychology, to create
-        beautiful and functional web applications.
+        I'm a fullstack developer from Stockholm, Sweden, who combines his
+        creative energy and passion for web development to create beautiful and
+        functional web applications. Using my knowledge from studying
+        psychology, I strive to create intuitive and user-friendly interfaces,
+        while also ensuring that the code is clean, reasonable and easy to
+        maintain.
       </Text>
 
       <Text>
-        Have been working as a professional developer since the summer of 2021,
-        and am currently employed at Bright Energy AB. My current work involves
-        B2B integrations and mobile/web development. I'm also development lead
-        for an administation tool for the company and our clients.
+        My current tech stack includes React, React Native, Node.js, Express,
+        MongoDB, and TypeScript.
+      </Text>
+
+      <Text>
+        I have been working as a professional developer since the summer of
+        2021, and am currently employed at Bright Energy AB. My current work
+        involves B2B integrations and mobile/web development. I'm also
+        development lead for Bright Bridge; an administration tool for Bright
+        Energy AB and its clients.
       </Text>
     </Section>
   );
@@ -68,7 +78,7 @@ const ProjectsSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        I'm actively working on two side projects currently, which will be
+        I'm actively working on two side projects at the moment that will be
         released in the near future. You can read more about them on the{' '}
         <Anchor to='/projects'>Projects</Anchor> page.
       </Text>
@@ -106,7 +116,7 @@ export const HomePage: FunctionComponent = () => {
   return (
     <React.Fragment>
       <StyledHeader>
-        <StyledAvatar src='src/assets/avatar.jpeg' alt='avatar' />
+        <StyledAvatar src={avatar} alt='Anton Bertilsson' />
         <StyledSubHeader>
           <Text variant='h1'>Anton Bertilsson</Text>
           <Text variant='h2'>Fullstack developer</Text>

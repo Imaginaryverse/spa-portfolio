@@ -114,10 +114,14 @@ export const AboutPage: FunctionComponent = () => {
           create the best possible solutions, whether it be in terms of user
           experience, performance or maintainability.
         </Text>
+
         <Text>
-          In my current role at Bright Energy AB, my work involves B2B
-          integrations, mobile and web development, and I'm also development
-          lead for the Bright Bridge administration tool.
+          I use my analytical and creative talents to solve problems, and I'm
+          constantly looking for ways to improve my skills and knowledge.
+          Besides programming, I'm also interested in psychology, which I
+          studied part-time in 2018. I make use of my knowledge from those
+          studies in my work as a developer, as I believe that understanding how
+          people think is a crucial part of creating good software.
         </Text>
       </Section>
 
@@ -169,8 +173,7 @@ export const AboutPage: FunctionComponent = () => {
         <Text>
           Upon graduating from the program, I was hired as a consultant at
           Bright Energy AB, and became a full-time developer in August 2021. I
-          am now working on a variety of projects, including B2B integrations,
-          mobile and web development, and I'm also development lead for Bright
+          now work in a variety of domains, and I'm development lead for Bright
           Bridge - an administration tool for Bright Energy AB and its clients.
         </Text>
       </Section>

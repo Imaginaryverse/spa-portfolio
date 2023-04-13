@@ -8,7 +8,7 @@ export const ProjectsPage: FunctionComponent = () => {
 
       <Section>
         <Text>
-          I'm actively developing two side projects which will be avaible here
+          I'm actively developing two side projects that will be avaible here
           soon.
         </Text>
 
