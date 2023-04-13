@@ -69,7 +69,7 @@ const StyledCurricumulVitaeItem = styled.li`
   align-items: flex-start;
   justify-content: flex-start;
 
-  gap: ${({ theme }) => theme.spacing.S};
+  gap: ${({ theme }) => theme.spacing.XS};
   border-left: 4px solid ${({ theme }) => theme.colors.primary.surface};
 
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
