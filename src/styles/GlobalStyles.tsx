@@ -35,28 +35,6 @@ export const GlobalStyles = createGlobalStyle`
 
   ${scrollbarStyle}
 
-
-    a {
-      color: ${({ theme }) => theme.colors.body.text};
-      font-weight: bold;
-      text-decoration: 2px underline;
-      text-underline-offset: 0.125rem;
-      transition: all ${({ theme }) =>
-        theme.transitionDuration.medium} ease-in-out;
-        
-      &:hover {
-        color: ${({ theme }) => theme.colors.primary.main};
-      }
-  
-      &:visited {
-        color: ${({ theme }) => theme.colors.body.text};
-
-        &:hover {
-          color: ${({ theme }) => theme.colors.primary.main};
-        }
-      }
-    }
-
     /* @media screen and (max-width: 767px) {
       font-size: 14px;
     } */

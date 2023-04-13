@@ -110,6 +110,19 @@ const StyledNavLink = styled(NavLink)`
     opacity: 0;
   }
 
+  &:visited {
+    color: ${({ theme }) => theme.colors.body.text};
+  }
+
+  &:hover {
+    &:not(.active) {
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
   &.active {
     color: ${({ theme }) => theme.colors.primary.main};
 
@@ -118,22 +131,9 @@ const StyledNavLink = styled(NavLink)`
       background-color: ${({ theme }) => theme.colors.primary.main};
       opacity: 1;
     }
-  }
 
-  &:hover {
-    &:not(.active) {
-      &::after {
-        width: 100%;
-
-        background-color: ${({ theme }) => theme.colors.body.text};
-        opacity: 1;
-      }
-    }
-  }
-
-  &:visited {
-    &:not(.active) {
-      color: ${({ theme }) => theme.colors.body.text};
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary.main};
     }
   }
 `;
@@ -156,7 +156,7 @@ const StyledHamburgerBtn = styled.button`
 
   &:hover {
     & > div {
-      background-color: ${({ theme }) => theme.colors.primary.main};
+      background-color: ${({ theme }) => theme.colors.body.text};
     }
   }
 
@@ -170,7 +170,7 @@ const StyledHamburgerIcon = styled.div`
   width: 100%;
   height: 3px;
 
-  background-color: ${({ theme }) => theme.colors.body.text};
+  background-color: ${({ theme }) => theme.colors.primary.main};
 
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 

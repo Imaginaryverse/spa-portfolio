@@ -192,6 +192,11 @@ export const AboutPage: FunctionComponent = () => {
           playing video games, cooking, and spending time in nature.
           Occasionally, you can also find me playing the guitar or singing.
         </Text>
+
+        <Text>
+          In the future, I would like to start blogging about my programming
+          journey, and share my experiences and knowledge with others.
+        </Text>
       </Section>
     </React.Fragment>
   );

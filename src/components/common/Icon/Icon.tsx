@@ -4,6 +4,7 @@ import { IconBase, IconType } from 'react-icons';
 import {
   FiGithub,
   FiLinkedin,
+  FiInstagram,
   FiMail,
   FiExternalLink,
   FiMoon,
@@ -18,6 +19,7 @@ import styled, { DefaultTheme } from 'styled-components';
 type FeatherIcon =
   | 'github'
   | 'linkedin'
+  | 'instagram'
   | 'mail'
   | 'external-link'
   | 'moon'
@@ -30,6 +32,7 @@ type FeatherIcon =
 const IconMap: Record<FeatherIcon, IconType> = {
   github: FiGithub,
   linkedin: FiLinkedin,
+  instagram: FiInstagram,
   mail: FiMail,
   'external-link': FiExternalLink,
   moon: FiMoon,
@@ -93,6 +96,12 @@ type IconProps = {
     bottom?: `${number}rem`;
     left?: `${number}rem`;
   };
+  /**
+   * Vertical alignment of the icon.
+   * @type 'top' | 'middle' | 'bottom'
+   * @default undefined
+   */
+  verticalAlign?: 'top' | 'middle' | 'bottom';
 };
 
 function getIconSize(size: IconProps['size']) {
@@ -147,6 +156,7 @@ export const Icon: FunctionComponent<IconProps> = ({
   stopPropagation = false,
   title,
   margin,
+  verticalAlign,
 }) => {
   const IconComponent = IconMap[name];
 
@@ -181,6 +191,7 @@ export const Icon: FunctionComponent<IconProps> = ({
           marginBottom: margin.bottom,
           marginLeft: margin.left,
         }),
+        ...(verticalAlign && { verticalAlign }),
       }}
     />
   );

@@ -11,6 +11,7 @@ const StyledPage = styled.main`
   max-width: 1440px;
 
   padding: ${({ theme }) => theme.spacing.M} ${({ theme }) => theme.spacing.L};
+  padding-bottom: 0;
 
   display: flex;
   flex-direction: column;
@@ -21,6 +22,7 @@ const StyledPage = styled.main`
 
   @media screen and (min-width: 768px) {
     padding: ${({ theme }) => `${theme.spacing.M} ${theme.spacing.XL}`};
+    padding-bottom: 0;
   }
 `;
 

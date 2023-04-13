@@ -4,6 +4,7 @@ import { Page } from '@src/components/common';
 import { FunctionComponent, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { Footer } from '@src/components/Footer/Footer';
 
 const StyledApp = styled.div`
   position: relative;
@@ -15,20 +16,6 @@ const StyledApp = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-`;
-
-const StyledFooter = styled.footer`
-  min-height: 100px;
-  height: 100px;
-  width: 100%;
-  max-width: 1440px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  // place at bottom of page
-  margin-top: auto;
 `;
 
 export const Layout: FunctionComponent = () => {
@@ -44,7 +31,7 @@ export const Layout: FunctionComponent = () => {
       <Navigation />
       <Page>
         <Outlet />
-        <StyledFooter>Footer</StyledFooter>
+        <Footer />
       </Page>
     </StyledApp>
   );
