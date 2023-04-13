@@ -22,7 +22,7 @@ const StyledFooterContent = styled.div`
   max-width: calc(75ch + 1rem);
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 15rem));
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   gap: ${({ theme }) => theme.spacing.L};
 
@@ -30,15 +30,15 @@ const StyledFooterContent = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing.L};
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, minmax(0, 15rem));
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 const StyledFooterColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: flex-start;
   gap: ${({ theme }) => theme.spacing.S};
 `;
 
@@ -51,6 +51,24 @@ const StyledFooterLink = styled(Link)`
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 
   &:hover {
+    opacity: 1;
+    color: ${({ theme }) => theme.colors.primary.main};
+  }
+`;
+
+const StyledFooterThemeSwitch = styled.button`
+  color: ${({ theme }) => theme.colors.body.text};
+  font-size: ${({ theme }) => theme.fontSize.SMALL};
+  text-decoration: none;
+
+  opacity: 0.75;
+  transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
+
+  border: none;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
     opacity: 1;
     color: ${({ theme }) => theme.colors.primary.main};
   }
@@ -107,9 +125,9 @@ export const Footer: FunctionComponent = () => {
           </StyledFooterLink>
         </StyledFooterColumn>
         <StyledFooterColumn>
-          <StyledFooterLink onClick={() => switchThemeMode()} to='#'>
+          <StyledFooterThemeSwitch onClick={() => switchThemeMode()}>
             Switch mode
-          </StyledFooterLink>
+          </StyledFooterThemeSwitch>
         </StyledFooterColumn>
       </StyledFooterContent>
     </StyledFooter>

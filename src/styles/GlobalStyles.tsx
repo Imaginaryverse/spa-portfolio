@@ -16,10 +16,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.body.text};
     background-color: ${({ theme }) => theme.colors.body.background};
     
-    font-size: 16px;
+    font-size: 18px;
     font-family: sans-serif;
     line-height: 1.5;
-    letter-spacing: 0.125rem;
+    letter-spacing: calc(0.125rem / 2);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -35,8 +35,8 @@ export const GlobalStyles = createGlobalStyle`
 
   ${scrollbarStyle}
 
-    /* @media screen and (max-width: 767px) {
-      font-size: 14px;
-    } */
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 `;

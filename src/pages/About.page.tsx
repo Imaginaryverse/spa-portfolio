@@ -96,12 +96,6 @@ const StyledCurricumulVitaeItem = styled.li`
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary.surface};
-
-    h4 {
-      color: ${({ theme }) => theme.colors.primary.main};
-    }
-
     &::before {
       outline-color: ${({ theme }) => theme.colors.primary.main};
       transform: translateY(-50%) scale(1.25);

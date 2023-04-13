@@ -28,6 +28,13 @@ const StyledAvatar = styled.img`
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 `;
 
+const StyledSubHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
 const BioSection: FunctionComponent = () => {
   return (
     <Section>
@@ -61,8 +68,8 @@ const ProjectsSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        I'm actively working on two side projects which will be released in the
-        near future. You can read more about them on the{' '}
+        I'm actively working on two side projects currently, which will be
+        released in the near future. You can read more about them on the{' '}
         <Anchor to='/projects'>Projects</Anchor> page.
       </Text>
 
@@ -100,10 +107,10 @@ export const HomePage: FunctionComponent = () => {
     <React.Fragment>
       <StyledHeader>
         <StyledAvatar src='src/assets/avatar.jpeg' alt='avatar' />
-        <div>
+        <StyledSubHeader>
           <Text variant='h1'>Anton Bertilsson</Text>
           <Text variant='h2'>Fullstack developer</Text>
-        </div>
+        </StyledSubHeader>
       </StyledHeader>
 
       <BioSection />
