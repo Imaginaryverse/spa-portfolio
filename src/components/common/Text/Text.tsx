@@ -4,7 +4,7 @@ import styled, { DefaultTheme, css } from 'styled-components';
 type TextProps = {
   children: React.ReactNode;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
-  color?: 'inherit' | 'primary' | 'secondary' | 'danger';
+  color?: 'inherit' | 'primary' | 'secondary';
   textAlign?: 'left' | 'center' | 'right';
   fontWeight?: 'normal' | 'bold';
   alignSelf?: 'flex-start' | 'center' | 'flex-end';
@@ -52,7 +52,6 @@ function applyColor(color: TextProps['color'], theme: DefaultTheme) {
   switch (color) {
     case 'primary':
     case 'secondary':
-    case 'danger':
       return theme.colors[color].main;
     case 'inherit':
       return 'inherit';
