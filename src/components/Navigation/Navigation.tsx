@@ -87,7 +87,7 @@ const StyledNav = styled.nav`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  font-size: ${({ theme }) => theme.fontSize.H3};
+  font-size: ${({ theme }) => theme.fontSize.H4};
   font-weight: bold;
   color: ${({ theme }) => theme.colors.body.text};
 
