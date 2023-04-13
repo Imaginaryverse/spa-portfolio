@@ -57,10 +57,10 @@ type IconProps = {
   size?: 'small' | 'medium' | 'large' | `${number}rem`;
   /**
    * The color of the icon.
-   * @type 'inherit' | 'primary' | 'secondary' | 'danger';
+   * @type 'inherit' | 'primary' | 'secondary';
    * @default 'inherit'
    */
-  color?: 'inherit' | 'primary' | 'secondary' | 'danger';
+  color?: 'inherit' | 'primary' | 'secondary';
   /**
    * If true, the icon will be opaque.
    */
@@ -121,7 +121,6 @@ function getIconColor(color: IconProps['color'], theme: DefaultTheme): string {
   switch (color) {
     case 'primary':
     case 'secondary':
-    case 'danger':
       return theme.colors[color].main;
     case 'inherit':
     default:

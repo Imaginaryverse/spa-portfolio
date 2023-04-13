@@ -18,7 +18,7 @@ type ButtonProps = {
    * @default 'primary'
    * @type 'primary' | 'secondary'
    */
-  color?: 'primary' | 'secondary' | 'danger';
+  color?: 'primary' | 'secondary';
   /**
    * If true, the button's background will be transparent while the text and border will be colored.
    * @default false
@@ -75,7 +75,7 @@ function applyPaddingStyle(
 }
 
 function applyBackgroundStyle(
-  color: 'primary' | 'secondary' | 'danger' = 'primary',
+  color: 'primary' | 'secondary' = 'primary',
   ghost: boolean = false,
   theme: DefaultTheme
 ): string {
@@ -86,7 +86,6 @@ function applyBackgroundStyle(
   switch (color) {
     case 'primary':
     case 'secondary':
-    case 'danger':
       return theme.colors[color].main;
     default:
       return theme.colors.primary.main;
@@ -94,7 +93,7 @@ function applyBackgroundStyle(
 }
 
 function applyColorStyle(
-  color: 'primary' | 'secondary' | 'danger' = 'primary',
+  color: 'primary' | 'secondary' = 'primary',
   ghost: boolean = false,
   theme: DefaultTheme
 ): string {
@@ -106,7 +105,7 @@ function applyColorStyle(
 }
 
 function applyBorderColorStyle(
-  color: 'primary' | 'secondary' | 'danger' = 'primary',
+  color: 'primary' | 'secondary' = 'primary',
   ghost: boolean = false,
   theme: DefaultTheme
 ): string {
