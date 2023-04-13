@@ -22,11 +22,6 @@ interface Theme {
       surface: string;
       text: string;
     };
-    danger: {
-      main: string;
-      surface: string;
-      text: string;
-    };
   };
   spacing: {
     XXS: Spacing; // 0.125rem

@@ -42,24 +42,19 @@ const sharedProperties: Pick<
 export const darkTheme: DefaultTheme = {
   colors: {
     body: {
-      background: '#101112',
-      border: '#EFF1F250',
-      text: '#EFF1F2',
+      background: '#161718',
+      border: '#E9EBED50',
+      text: '#E9EBED',
     },
     primary: {
       main: '#42BDEE',
       surface: '#42BDEE20',
-      text: '#101112',
+      text: '#161718',
     },
     secondary: {
       main: '#E6A43A',
       surface: '#E6A43A20',
-      text: '#101112',
-    },
-    danger: {
-      main: '#E66767',
-      surface: '#E6676720',
-      text: '#101112',
+      text: '#161718',
     },
   },
   ...sharedProperties,
@@ -68,24 +63,19 @@ export const darkTheme: DefaultTheme = {
 export const lightTheme: DefaultTheme = {
   colors: {
     body: {
-      background: '#FDFDFD',
-      border: '#10101650',
-      text: '#101016',
+      background: '#EFF1F2',
+      border: '#16171850',
+      text: '#161718',
     },
     primary: {
-      main: '#45459F',
-      surface: '#45459F20',
-      text: '#FDFDFD',
+      main: '#056B94',
+      surface: '#056B9420',
+      text: '#EFF1F2',
     },
     secondary: {
-      main: '#525234',
-      surface: '#52523420',
-      text: '#FDFDFD',
-    },
-    danger: {
-      main: '#843A4E',
-      surface: '#843A4E20',
-      text: '#FDFDFD',
+      main: '#8f5C0A',
+      surface: '#8f5C0A20',
+      text: '#EFF1F2',
     },
   },
   ...sharedProperties,
