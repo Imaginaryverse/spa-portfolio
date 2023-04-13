@@ -156,7 +156,7 @@ const StyledHamburgerBtn = styled.button`
 
   &:hover {
     & > div {
-      background-color: ${({ theme }) => theme.colors.body.text};
+      background-color: ${({ theme }) => theme.colors.primary.main};
     }
   }
 
@@ -170,7 +170,7 @@ const StyledHamburgerIcon = styled.div`
   width: 100%;
   height: 3px;
 
-  background-color: ${({ theme }) => theme.colors.primary.main};
+  background-color: ${({ theme }) => theme.colors.body.text};
 
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 

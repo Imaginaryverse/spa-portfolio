@@ -31,14 +31,14 @@ const StyledCircle = styled.div<{ currentRotation: number }>`
   gap: 0.8rem;
 
   color: ${({ theme }) => theme.colors.body.background};
-  background-color: ${({ theme }) => theme.colors.primary.main};
+  background-color: ${({ theme }) => theme.colors.body.text};
   transition: all 0.4s ease-in-out;
 
   transform: rotate(${({ currentRotation }) => currentRotation}deg);
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary.text};
-    background-color: ${({ theme }) => theme.colors.body.text};
+    background-color: ${({ theme }) => theme.colors.primary.main};
   }
 `;
 
