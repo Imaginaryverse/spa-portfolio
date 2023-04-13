@@ -2,12 +2,12 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useWindowSize } from '../hooks';
-import { useThemeMode } from '@src/context/ThemeModeProvider';
 import { ThemeSwitch } from '../ThemeSwitch/ThemeSwitch';
 
 enum Routes {
   HOME = '/',
   ABOUT = '/about',
+  PROJECTS = '/projects',
   CONTACT = '/contact',
 }
 
@@ -19,7 +19,6 @@ const StyledNavigationHeader = styled.header`
   max-width: 1440px;
   min-height: 100px;
   height: 100px;
-  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -105,7 +104,7 @@ const StyledNavLink = styled(NavLink)`
     left: 0;
     width: 0;
     height: 3px;
-    background-color: ${({ theme }) => theme.colors.primary.main};
+    background-color: ${({ theme }) => theme.colors.body.text};
     transition: all ${({ theme }) => theme.transitionDuration.slow} ease-in-out;
 
     opacity: 0;
@@ -116,6 +115,7 @@ const StyledNavLink = styled(NavLink)`
 
     &::after {
       width: 100%;
+      background-color: ${({ theme }) => theme.colors.primary.main};
       opacity: 1;
     }
   }

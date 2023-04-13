@@ -36,14 +36,14 @@ const BioSection: FunctionComponent = () => {
         Bio
       </Text>
       <Text>
-        I'm a fullstack developer from Stockholm, Sweden, primarily working with
-        React, Node.js and TypeScript. I combine my creative energy, and passion
-        for web development and psychology, to create beautiful and functional
-        web applications.
+        I'm a fullstack developer from Stockholm, Sweden, whose primary tech
+        stack includes React, Node.js and TypeScript. I combine my creative
+        energy, and passion for web development and psychology, to create
+        beautiful and functional web applications.
       </Text>
 
       <Text>
-        I've been working as a professional developer since the summer of 2021,
+        Have been working as a professional developer since the summer of 2021,
         and am currently employed at Bright Energy AB. My current work involves
         B2B integrations and mobile/web development. I'm also development lead
         for an administation tool for the company and our clients.
@@ -59,8 +59,9 @@ const ProjectsSection: FunctionComponent = () => {
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
         Projects
       </Text>
+
       <Text>
-        You can find a list of my personal projects on{' '}
+        Check out my public repositories on{' '}
         <a href='https://github.com/Imaginaryverse' target='_blank'>
           GitHub
         </a>

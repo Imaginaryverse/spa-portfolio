@@ -18,4 +18,8 @@ export const scrollbarStyle = css`
 
     box-shadow: inset 0 0 0 0.25rem rgba(0, 0, 0, 0.125);
   }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.primary.main}90;
+  }
 `;

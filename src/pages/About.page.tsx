@@ -86,7 +86,7 @@ const StyledCurricumulVitaeItem = styled.li`
     transform: translateY(-50%);
     border-radius: 50%;
 
-    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline: 2px solid transparent;
     outline-offset: 2px;
 
     background-color: ${({ theme }) => theme.colors.primary.main};
@@ -103,6 +103,7 @@ const StyledCurricumulVitaeItem = styled.li`
     }
 
     &::before {
+      outline-color: ${({ theme }) => theme.colors.primary.main};
       transform: translateY(-50%) scale(1.25);
     }
   }
@@ -114,7 +115,7 @@ export const AboutPage: FunctionComponent = () => {
       <Section>
         <Text variant='h2'>About me</Text>
         <Text>
-          I'm a fullstack developer with a passion for programming and systems
+          I'm a fullstack developer with a passion for programming and software
           architecture. I care deeply about the quality of my work and strive to
           create the best possible solutions, whether it be in terms of user
           experience, performance or maintainability.
@@ -122,8 +123,7 @@ export const AboutPage: FunctionComponent = () => {
         <Text>
           In my current role at Bright Energy AB, my work involves B2B
           integrations, mobile and web development, and I'm also development
-          lead for Bright Bridge - an administration tool for Bright Energy AB
-          and its clients.
+          lead for the Bright Bridge administration tool.
         </Text>
       </Section>
 
@@ -146,6 +146,52 @@ export const AboutPage: FunctionComponent = () => {
             </StyledCurricumulVitaeItem>
           ))}
         </StyledCurricumulVitaeList>
+      </Section>
+
+      <Section>
+        <Text variant='h3'>
+          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+          Programming journey
+        </Text>
+
+        <Text>
+          I first got into programming in 2019 when I enrolled in Harvard
+          University's CS50 course. I have been a creative and analytical person
+          my entire life, and programming seemed the perfect outlet for both of
+          these sides of my personality. Thinking about how to solve problems
+          stimulated my analytical side, while writing code to solve the
+          problems satisfied my creative side. It didn't take long before I was
+          hooked.
+        </Text>
+
+        <Text>
+          I continued to study programming in my spare time, and in 2021 I
+          enrolled in the fullstack developer program at School of Applied
+          Technology. Out of over 1000 applicants, I was one of only 30 students
+          selected to participate in the program. The program was a 12-week
+          full-time course which primarily focused on the JavaScript ecosystem.
+        </Text>
+
+        <Text>
+          Upon graduating from the program, I was hired as a consultant at
+          Bright Energy AB, and became a full-time developer in August 2021. I
+          am now working on a variety of projects, including B2B integrations,
+          mobile and web development, and I'm also development lead for Bright
+          Bridge - an administration tool for Bright Energy AB and its clients.
+        </Text>
+      </Section>
+
+      <Section>
+        <Text variant='h3'>
+          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+          Hobbies
+        </Text>
+
+        <Text>
+          While I tend to spend a lot of my free time programming, I also enjoy
+          playing video games, cooking, and spending time in nature.
+          Occasionally, you can also find me playing the guitar or singing.
+        </Text>
       </Section>
     </React.Fragment>
   );

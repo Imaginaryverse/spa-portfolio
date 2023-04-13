@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { scrollbarStyle } from './css';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -32,6 +33,9 @@ export const GlobalStyles = createGlobalStyle`
       background-color ${({ theme }) =>
         theme.transitionDuration.medium} ease-in-out;
 
+  ${scrollbarStyle}
+
+
     a {
       color: ${({ theme }) => theme.colors.body.text};
       font-weight: bold;
@@ -53,8 +57,8 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
 
-    @media screen and (max-width: 767px) {
+    /* @media screen and (max-width: 767px) {
       font-size: 14px;
-    }
+    } */
   }
 `;
