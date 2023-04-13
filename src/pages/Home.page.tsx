@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Icon, Section, Text } from '@src/components/common';
+import { Anchor, Icon, Section, Text } from '@src/components/common';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -33,7 +33,7 @@ const BioSection: FunctionComponent = () => {
     <Section>
       <Text variant='h3'>
         <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
-        Bio
+        Biography
       </Text>
       <Text>
         I'm a fullstack developer from Stockholm, Sweden, whose primary tech
@@ -61,10 +61,16 @@ const ProjectsSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        Check out my public repositories on{' '}
-        <a href='https://github.com/Imaginaryverse' target='_blank'>
+        I'm actively working on two side projects which will be released in the
+        near future. You can read more about them on the{' '}
+        <Anchor to='/projects'>Projects</Anchor> page.
+      </Text>
+
+      <Text>
+        Alternatively, you can check out my public repositories on{' '}
+        <Anchor to='https://github.com/Imaginaryverse' target='_blank'>
           GitHub
-        </a>
+        </Anchor>
         .
       </Text>
     </Section>
@@ -80,12 +86,9 @@ const ContactSection: FunctionComponent = () => {
       </Text>
       <Text>
         Connect with me on{' '}
-        <a
-          href='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'
-          target='_blank'
-        >
+        <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
           LinkedIn
-        </a>
+        </Anchor>
         .
       </Text>
     </Section>

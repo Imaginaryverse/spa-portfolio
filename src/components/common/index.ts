@@ -1,3 +1,4 @@
+export { Anchor } from './Anchor/Anchor';
 export { Button } from './Button/Button';
 export { Icon } from './Icon/Icon';
 export { Page } from './Page/Page';
