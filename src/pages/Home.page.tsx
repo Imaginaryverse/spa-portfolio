@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Anchor, Icon, Section, Text } from '@src/components/common';
-const Avatar = React.lazy(() => import('@src/components/Avatar/Avatar'));
+import avatar from '@src/assets/avatar.jpeg';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -16,6 +16,17 @@ const StyledHeader = styled.header`
     flex-direction: column;
     align-items: center;
   }
+`;
+
+const StyledAvatar = styled.img`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  outline: 2px solid ${({ theme }) => theme.colors.body.border};
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+
+  transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 `;
 
 const StyledSubHeader = styled.div`
@@ -105,8 +116,7 @@ export const HomePage: FunctionComponent = () => {
   return (
     <React.Fragment>
       <StyledHeader>
-        {/* <StyledAvatar src={avatar} alt='Anton Bertilsson' /> */}
-        <Avatar />
+        <StyledAvatar src={avatar} alt='Anton Bertilsson' />
         <StyledSubHeader>
           <Text variant='h1'>Anton Bertilsson</Text>
           <Text variant='h2'>Fullstack developer</Text>
