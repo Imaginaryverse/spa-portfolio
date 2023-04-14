@@ -238,6 +238,8 @@ export const ContactForm: FunctionComponent = () => {
       method='POST'
       data-netlify='true'
     >
+      <input type='hidden' name='form-name' value='contact' />
+
       <StyledContactInputGroup>
         <StyledContactFormLabel htmlFor='name'>Name</StyledContactFormLabel>
         <StyledContactFormInput
