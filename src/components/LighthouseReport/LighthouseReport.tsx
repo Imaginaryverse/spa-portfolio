@@ -124,7 +124,7 @@ export const LighthouseReport: FunctionComponent = () => {
             (LOADING_MSGS.indexOf(prevMsg) + 1) % LOADING_MSGS.length
           ]
       );
-    }, 3000);
+    }, 2250);
 
     return () => clearInterval(interval);
   }, [isLoading]);

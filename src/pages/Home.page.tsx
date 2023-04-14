@@ -54,8 +54,8 @@ const BioSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        My current tech stack includes React, React Native, Node.js, Express,
-        MongoDB, and TypeScript.
+        My tech stack includes <b>React</b>, <b>Node.js</b>, <b>Express</b>,{' '}
+        <b>MongoDB</b>, and <b>TypeScript</b>.
       </Text>
 
       <Text>
@@ -76,7 +76,7 @@ const ContactSection: FunctionComponent = () => {
         Contact
       </Text>
       <Text>
-        Connect with me on{' '}
+        Send me an <Anchor to='/contact'>email</Anchor> or connect with me on{' '}
         <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
           LinkedIn
         </Anchor>
