@@ -1,10 +1,30 @@
-import React, { FunctionComponent, useEffect, useRef } from 'react';
-import styled, { useTheme } from 'styled-components';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { useQuery } from 'react-query';
-import { Anchor, Icon, LoadingSpinner, Section, Text } from '../common';
+import { Anchor, LoadingSpinner, Section, Text } from '../common';
 import { fetchLighthouseReport } from '@src/api';
 import { LighthouseReportResult } from '@src/types/lighthouse.types';
 import { AnimatedGauge } from './Lighthouse.animatedGauge';
+
+const LOADING_MSGS = [
+  'Checking cache...',
+  'Auditing site...',
+  'Calculating performance...',
+  'Analyzing accessibility...',
+  'Checking best practices...',
+  'Evaluating SEO...',
+  '...',
+  'Drinking coffee...',
+  'Browsing Reddit...',
+  'Watching YouTube...',
+  'Getting sleepy...',
+  'zzz...',
+  '...',
+  'Uhm, what was I doing again?',
+  'Right! Audits!',
+  'Fetching more coffee...',
+  'Getting back to work!',
+];
 
 const StyledLighthouseReport = styled.div`
   width: 100%;
@@ -73,9 +93,11 @@ const StyledCategory = styled.div`
   }
 `;
 
-const cacheTime = 1000 * 60 * 60 * 24; // 24 hours (cache time is the time until the cache is considered invalid)
+const cacheTime = 1000 * 60 * 60 * 24; // 24 hours
 
 export const LighthouseReport: FunctionComponent = () => {
+  const [loadingMsg, setLoadingMsg] = useState(LOADING_MSGS[0]);
+
   const { data, isLoading, error } = useQuery<LighthouseReportResult, Error>(
     'lighthouse-report',
     fetchLighthouseReport,
@@ -89,15 +111,34 @@ export const LighthouseReport: FunctionComponent = () => {
     }
   );
 
+  useEffect(() => {
+    if (!isLoading) {
+      setLoadingMsg(LOADING_MSGS[0]);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setLoadingMsg(
+        prevMsg =>
+          LOADING_MSGS[
+            (LOADING_MSGS.indexOf(prevMsg) + 1) % LOADING_MSGS.length
+          ]
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isLoading]);
+
   return (
     <React.Fragment>
       <Section>
-        <Text variant='h3'>Lighthouse Report</Text>
+        <Text variant='h4'>Lighthouse Report</Text>
 
         {!!error && <Text>Oh no! My Lighthouse report went missing! :(</Text>}
 
         {!!data && !isLoading && (
           <Text>
+            Current Lighthouse report for this website.{' '}
             <Anchor
               to='https://developer.chrome.com/docs/lighthouse/overview/'
               target='_blank'
@@ -106,8 +147,7 @@ export const LighthouseReport: FunctionComponent = () => {
             </Anchor>{' '}
             is an open-source, automated tool provided by Google for improving
             the quality of web pages. It includes audits for performance,
-            accessibility, progressive web apps, SEO and more. Below is the
-            current report for this website.
+            accessibility, best practices, SEO and more.
           </Text>
         )}
       </Section>
@@ -115,6 +155,9 @@ export const LighthouseReport: FunctionComponent = () => {
       {isLoading && (
         <StyledLighthouseReport>
           <LoadingSpinner />
+          <Text variant='label' opaque>
+            {loadingMsg}
+          </Text>
         </StyledLighthouseReport>
       )}
 
