@@ -232,7 +232,12 @@ export const ContactForm: FunctionComponent = () => {
   }
 
   return (
-    <StyledContactForm onSubmit={handleSubmit} name='contact' netlify>
+    <StyledContactForm
+      onSubmit={handleSubmit}
+      name='contact'
+      method='POST'
+      data-netlify='true'
+    >
       <StyledContactInputGroup>
         <StyledContactFormLabel htmlFor='name'>Name</StyledContactFormLabel>
         <StyledContactFormInput
