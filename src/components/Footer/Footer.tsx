@@ -26,7 +26,7 @@ const StyledFooterContent = styled.div`
   grid-template-rows: 1fr;
   gap: ${({ theme }) => theme.spacing.L};
 
-  padding-top: ${({ theme }) => theme.spacing.XXL};
+  padding-top: ${({ theme }) => theme.spacing.XL};
   padding-bottom: ${({ theme }) => theme.spacing.L};
 
   @media screen and (min-width: 768px) {
