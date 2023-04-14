@@ -4,9 +4,9 @@ import { Anchor, Section, Text } from '@src/components/common';
 export const ContactPage: FunctionComponent = () => {
   return (
     <React.Fragment>
-      <Text variant='h2'>Contact</Text>
-
       <Section>
+        <Text variant='h2'>Contact</Text>
+
         <Text>
           Connect with me on{' '}
           <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>

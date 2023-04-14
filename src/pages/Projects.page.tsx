@@ -5,9 +5,9 @@ import { LighthouseReport } from '@src/components/LighthouseReport/LighthouseRep
 export const ProjectsPage: FunctionComponent = () => {
   return (
     <React.Fragment>
-      <Text variant='h2'>Projects</Text>
-
       <Section>
+        <Text variant='h2'>Projects</Text>
+
         <Text>
           I'm actively developing two side projects that will be avaible here
           soon.
