@@ -46,11 +46,10 @@ const BioSection: FunctionComponent = () => {
 
       <Text>
         I'm a fullstack developer from Stockholm, Sweden, who combines his
-        creative energy and passion for web development to create beautiful and
-        functional web applications. Using my knowledge from studying
-        psychology, I strive to create intuitive and user-friendly interfaces,
-        while also ensuring that the code is clean, reasonable and easy to
-        maintain.
+        creative energy and passion for web development to build beautiful and
+        functional web applications. By using my knowledge from studying
+        psychology, I create intuitive and user-friendly interfaces, while also
+        ensuring that the code is clean, reasonable and easy to maintain.
       </Text>
 
       <Text>
@@ -59,36 +58,10 @@ const BioSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        I have been working as a professional developer since the summer of
-        2021, and am currently employed at Bright Energy AB. My current work
-        involves B2B integrations and mobile/web development. I'm also
-        development lead for Bright Bridge; an administration tool for Bright
-        Energy AB and its clients.
-      </Text>
-    </Section>
-  );
-};
-
-const ProjectsSection: FunctionComponent = () => {
-  return (
-    <Section>
-      <Text variant='h3'>
-        <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
-        Projects
-      </Text>
-
-      <Text>
-        I'm actively working on two side projects at the moment that will be
-        released in the near future. You can read more about them on the{' '}
-        <Anchor to='/projects'>Projects</Anchor> page.
-      </Text>
-
-      <Text>
-        Alternatively, you can check out my public repositories on{' '}
-        <Anchor to='https://github.com/Imaginaryverse' target='_blank'>
-          GitHub
-        </Anchor>
-        .
+        Working as a professional developer since 2021, currently employed at
+        Bright Energy AB. My role mainly involves B2B integrations and
+        mobile/web development. I'm also development lead for Bright Bridge - an
+        administration tool for Bright Energy AB and its clients.
       </Text>
     </Section>
   );
@@ -124,8 +97,6 @@ export const HomePage: FunctionComponent = () => {
       </StyledHeader>
 
       <BioSection />
-
-      <ProjectsSection />
 
       <ContactSection />
     </React.Fragment>
