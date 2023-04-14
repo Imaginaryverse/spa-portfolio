@@ -7,12 +7,11 @@ type PageProps = {
 
 const StyledPage = styled.main`
   width: 100%;
-  height: 100%;
   max-width: 1440px;
 
   padding: ${({ theme }) => theme.spacing.M} ${({ theme }) => theme.spacing.L};
-  padding-bottom: 0;
 
+  flex: 1 1 auto; // flex-grow, flex-shrink, flex-basis (means that it will take up all available space)
   display: flex;
   flex-direction: column;
   align-items: flex-start;
