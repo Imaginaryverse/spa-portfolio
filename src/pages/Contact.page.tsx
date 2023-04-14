@@ -14,7 +14,7 @@ export const ContactPage: FunctionComponent = () => {
         </Text>
 
         <Text>
-          Send me an email or connect with me on{' '}
+          Send a message or connect with me on{' '}
           <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
             LinkedIn
           </Anchor>

@@ -76,7 +76,7 @@ const ContactSection: FunctionComponent = () => {
         Contact
       </Text>
       <Text>
-        Send me an <Anchor to='/contact'>email</Anchor> or connect with me on{' '}
+        Send a <Anchor to='/contact'>message</Anchor> or connect with me on{' '}
         <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
           LinkedIn
         </Anchor>

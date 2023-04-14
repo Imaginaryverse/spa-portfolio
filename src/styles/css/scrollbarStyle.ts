@@ -14,6 +14,7 @@ export const scrollbarStyle = css`
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.primary.main}75;
+    border-radius: 2px;
 
     box-shadow: inset 0 0 0 0.25rem rgba(0, 0, 0, 0.125);
   }

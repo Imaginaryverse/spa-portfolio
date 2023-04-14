@@ -1,6 +1,8 @@
-import { disabledStyle } from '@src/styles/css';
 import React, { FunctionComponent, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { Button, Section, Text } from '../common';
+
+const emailRegex = /^[^\s@]{1,64}@([^\s@]{2,253}\.){1,127}[^\s@]{2,63}$/;
 
 // encode form data for sending as post data
 const encode = (data: { [key: string]: string }) => {
@@ -61,6 +63,10 @@ const SneakyFormStyles = styled.div`
           background-color: ${({ theme }) => theme.colors.body.text}05;
         }
 
+        &[aria-invalid='true'] {
+          border-color: red;
+        }
+
         // prevent browser autofill from changing the styling
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
@@ -109,43 +115,60 @@ const SneakyFormStyles = styled.div`
           -webkit-transition: background-color 5000s ease-in-out 0s !important;
         }
       }
+    }
+  }
+`;
 
-      button {
-        width: fit-content;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: ${({ theme }) => theme.spacing.XS};
-        padding: ${({ theme }) => `${theme.spacing.S} ${theme.spacing.M}`};
+const StyledContactFormErrorContainer = styled.div`
+  width: calc(75ch + 1rem);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.XS};
+  padding: ${({ theme }) => `${theme.spacing.XS} ${theme.spacing.S}`};
 
-        color: ${({ theme }) => theme.colors.primary.text};
-        background-color: ${({ theme }) => theme.colors.primary.main};
-        border: 1px solid transparent;
-        border-radius: ${({ theme }) => theme.borderRadius.M};
+  background-color: #ff000050;
+  border-radius: ${({ theme }) => theme.borderRadius.S};
 
-        font-size: 1rem;
-        font-weight: bold;
-        text-decoration: none;
+  transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 
-        cursor: pointer;
+  animation: shake 0.5s ease-in-out;
 
-        transition: all ${({ theme }) => theme.transitionDuration.medium}
-          ease-in-out;
-
-        &:hover {
-          &:not(:disabled) {
-            border-radius: ${({ theme }) => theme.borderRadius.L};
-
-            background-color: ${({ theme }) => theme.colors.body.text};
-            color: ${({ theme }) => theme.colors.body.background};
-            border-color: ${({ theme }) => theme.colors.body.background};
-          }
-        }
-
-        &:disabled {
-          ${disabledStyle}
-        }
-      }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(-0.125rem);
+    }
+    20% {
+      transform: translateX(0.125rem);
+    }
+    30% {
+      transform: translateX(-0.125rem);
+    }
+    40% {
+      transform: translateX(0.125rem);
+    }
+    50% {
+      transform: translateX(-0.125rem);
+    }
+    60% {
+      transform: translateX(0.125rem);
+    }
+    70% {
+      transform: translateX(-0.125rem);
+    }
+    80% {
+      transform: translateX(0.125rem);
+    }
+    90% {
+      transform: translateX(-0.125rem);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 `;
@@ -154,15 +177,26 @@ export const ContactForm: FunctionComponent = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showPostError, setShowPostError] = useState(false);
+  const [showPostSuccess, setShowPostSuccess] = useState(false);
 
   const isSubmitDisabled = useMemo(() => {
-    return !name || !email || !message;
-  }, [name, email, message]);
+    return !name || !email || !message || showEmailError;
+  }, [name, email, message, showEmailError]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setShowPostSuccess(false);
+    setShowPostError(false);
+
     if (isSubmitDisabled) {
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      setShowEmailError(true);
       return;
     }
 
@@ -177,10 +211,10 @@ export const ContactForm: FunctionComponent = () => {
       }),
     })
       .then(() => {
-        alert('Success!');
+        setShowPostSuccess(true);
       })
-      .catch(error => {
-        alert(error);
+      .catch(() => {
+        setShowPostError(true);
       })
       .finally(() => {
         setName('');
@@ -188,6 +222,14 @@ export const ContactForm: FunctionComponent = () => {
         setMessage('');
       });
   };
+
+  if (showPostSuccess) {
+    return (
+      <Section>
+        <Text variant='h4'>Thanks for the message!</Text>
+      </Section>
+    );
+  }
 
   return (
     <SneakyFormStyles>
@@ -206,36 +248,61 @@ export const ContactForm: FunctionComponent = () => {
             id='name'
             type='text'
             name='name'
+            placeholder='Your name'
             value={name}
             onChange={e => setName(e.target.value)}
-            placeholder='Your name'
+            required
           />
         </p>
         <p className='input-group'>
           <label htmlFor='email'>Email</label>
           <input
+            className={showEmailError ? 'error' : ''}
+            aria-invalid={showEmailError}
             id='email'
             type='email'
             name='email'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
             placeholder='Your email'
+            value={email}
+            onChange={e => {
+              setShowEmailError(false);
+              setEmail(e.target.value);
+            }}
+            required
           />
         </p>
+
+        {showEmailError && (
+          <StyledContactFormErrorContainer>
+            <Text variant='label'>Please enter a valid email address</Text>
+          </StyledContactFormErrorContainer>
+        )}
+
         <p className='input-group'>
           <label htmlFor='message'>Message</label>
           <textarea
             id='message'
             name='message'
+            placeholder='Your message'
             value={message}
             onChange={e => setMessage(e.target.value)}
-            placeholder='Your message'
+            required
           />
         </p>
+
+        {showPostError && (
+          <StyledContactFormErrorContainer>
+            <Text variant='h6'>Oops! Something went wrong</Text>
+            <Text variant='label'>
+              Please check your input or try again later
+            </Text>
+          </StyledContactFormErrorContainer>
+        )}
+
         <p className='input-group'>
-          <button type='submit' disabled={isSubmitDisabled}>
+          <Button type='submit' disabled={isSubmitDisabled}>
             Send
-          </button>
+          </Button>
         </p>
       </form>
     </SneakyFormStyles>
