@@ -8,7 +8,7 @@ type LoadingSpinnerProps = {
 function applySpinnerSize(size: LoadingSpinnerProps['size']) {
   switch (size) {
     case 'small':
-      return '1.25rem';
+      return '1.15rem';
     case 'medium':
       return '2.5rem';
     case 'large':

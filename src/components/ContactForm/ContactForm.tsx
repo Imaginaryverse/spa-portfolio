@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { Button, Section, Text } from '../common';
+import { Button, LoadingSpinner, Section, Text } from '../common';
+import { disabledStyle } from '@src/styles/css';
 
 const emailRegex = /^[^\s@]{1,64}@([^\s@]{2,253}\.){1,127}[^\s@]{2,63}$/;
 
@@ -78,6 +79,10 @@ const SneakyFormStyles = styled.div`
             theme.colors.body.text} !important;
           -webkit-transition: background-color 5000s ease-in-out 0s !important;
         }
+
+        &:disabled {
+          ${disabledStyle}
+        }
       }
 
       textarea {
@@ -113,6 +118,10 @@ const SneakyFormStyles = styled.div`
           -webkit-text-fill-color: ${({ theme }) =>
             theme.colors.body.text} !important;
           -webkit-transition: background-color 5000s ease-in-out 0s !important;
+        }
+
+        &:disabled {
+          ${disabledStyle}
         }
       }
     }
@@ -178,12 +187,13 @@ export const ContactForm: FunctionComponent = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [showEmailError, setShowEmailError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPostError, setShowPostError] = useState(false);
   const [showPostSuccess, setShowPostSuccess] = useState(false);
 
   const isSubmitDisabled = useMemo(() => {
-    return !name || !email || !message || showEmailError;
-  }, [name, email, message, showEmailError]);
+    return !name || !email || !message || showEmailError || isSubmitting;
+  }, [name, email, message, showEmailError, isSubmitting]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -199,6 +209,8 @@ export const ContactForm: FunctionComponent = () => {
       setShowEmailError(true);
       return;
     }
+
+    setIsSubmitting(true);
 
     await fetch('/', {
       method: 'POST',
@@ -220,6 +232,7 @@ export const ContactForm: FunctionComponent = () => {
         setName('');
         setEmail('');
         setMessage('');
+        setIsSubmitting(false);
       });
   };
 
@@ -252,6 +265,7 @@ export const ContactForm: FunctionComponent = () => {
             value={name}
             onChange={e => setName(e.target.value)}
             required
+            disabled={isSubmitting}
           />
         </p>
         <p className='input-group'>
@@ -269,6 +283,7 @@ export const ContactForm: FunctionComponent = () => {
               setEmail(e.target.value);
             }}
             required
+            disabled={isSubmitting}
           />
         </p>
 
@@ -287,6 +302,7 @@ export const ContactForm: FunctionComponent = () => {
             value={message}
             onChange={e => setMessage(e.target.value)}
             required
+            disabled={isSubmitting}
           />
         </p>
 
@@ -300,8 +316,12 @@ export const ContactForm: FunctionComponent = () => {
         )}
 
         <p className='input-group'>
-          <Button type='submit' disabled={isSubmitDisabled}>
-            Send
+          <Button
+            type='submit'
+            ghost={isSubmitDisabled}
+            disabled={isSubmitDisabled}
+          >
+            {isSubmitting ? <LoadingSpinner size='small' /> : 'Send'}
           </Button>
         </p>
       </form>
