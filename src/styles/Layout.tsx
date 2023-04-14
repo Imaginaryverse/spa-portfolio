@@ -16,6 +16,10 @@ const StyledApp = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 85px;
+  }
 `;
 
 export const Layout: FunctionComponent = () => {

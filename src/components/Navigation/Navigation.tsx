@@ -17,8 +17,8 @@ const StyledNavigationHeader = styled.header`
   z-index: 100;
   width: 100%;
   max-width: 1440px;
-  min-height: 100px;
-  height: 100px;
+  min-height: 85px;
+  height: 85px;
 
   display: flex;
   align-items: center;
@@ -31,6 +31,8 @@ const StyledNavigationHeader = styled.header`
 
   @media screen and (min-width: 768px) {
     padding: 0 ${({ theme }) => theme.spacing.XL};
+    min-height: 100px;
+    height: 100px;
   }
 `;
 
@@ -40,10 +42,10 @@ const StyledNavigationHeader = styled.header`
  */
 const StyledHamburgerMenu = styled.nav`
   position: absolute;
-  top: 100px;
+  top: 85px;
   right: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 85px);
 
   display: flex;
   flex-direction: column;
