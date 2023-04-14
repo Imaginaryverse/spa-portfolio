@@ -45,7 +45,7 @@ export const ProjectsPage: FunctionComponent = () => {
         </Text>
         <Text>
           A personal finance tracker which allows users to track their income
-          and expenses, as well as visualise their spending habits.
+          and expenses, and visualise their spending habits.
         </Text>
       </Section>
 

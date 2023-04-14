@@ -36,7 +36,7 @@ const curricumulVitae: CurricumulVitaeItem[] = [
     company: 'Hemköp',
     date: 'Nov 2016 - Apr 2021',
     description:
-      'Shop assistant at Hemköp Örby in Stockholm. Studied Psychology A part-time via distance education in 2018 and programming in my spare time beginning in 2019.',
+      'Shop assistant at Hemköp Örby in Stockholm. Studied psychology part-time via distance education in 2018 and programming in my spare time beginning in 2019.',
   },
   {
     title: 'Student',
@@ -109,10 +109,10 @@ export const AboutPage: FunctionComponent = () => {
       <Section>
         <Text variant='h2'>About me</Text>
         <Text>
-          I'm a fullstack developer with a passion for programming and software
-          architecture. I care deeply about the quality of my work and strive to
-          create the best possible solutions, whether it be in terms of user
-          experience, performance or maintainability.
+          I'm passionate about programming and software architecture, and care
+          deeply about the quality of my work. I strive to create the best
+          possible solutions, whether it be in terms of user experience,
+          performance or maintainability.
         </Text>
 
         <Text>
@@ -156,18 +156,18 @@ export const AboutPage: FunctionComponent = () => {
           I first got into programming in 2019 when I enrolled in Harvard
           University's CS50 course. I have been a creative and analytical person
           my entire life, and programming seemed the perfect outlet for both of
-          these sides of my personality. Thinking about how to solve problems
-          stimulated my analytical side, while writing code to solve the
-          problems satisfied my creative side. It didn't take long before I was
-          hooked.
+          these sides of my personality. Thinking about problems and how to
+          solve them stimulated my analytical side, while writing code and
+          implementing great solutions satisfied my creative side. I was hooked
+          as soon as I understood the potential of programming.
         </Text>
 
         <Text>
-          I continued to study programming in my spare time, and in 2021 I
-          enrolled in the fullstack developer program at School of Applied
-          Technology. Out of over 1000 applicants, I was one of only 30 students
-          selected to participate in the program. The program was a 12-week
-          full-time course which primarily focused on the JavaScript ecosystem.
+          I continued to study in my spare time, and in 2021 I enrolled in the
+          fullstack developer program at School of Applied Technology. Out of
+          over 1000 applicants, I was one of only 30 students selected to
+          participate in the program. The program was a 12-week full-time course
+          which primarily focused on the JavaScript ecosystem.
         </Text>
 
         <Text>
@@ -192,7 +192,10 @@ export const AboutPage: FunctionComponent = () => {
 
         <Text>
           In the future, I would like to start blogging about my programming
-          journey, and share my experiences and knowledge with others.
+          journey, and share my experiences and knowledge with others. I'm in
+          large part self-taught through resources that are freely available on
+          the Internet, and I want give back to the community so that others can
+          have the same opportunities that I have had.
         </Text>
       </Section>
     </React.Fragment>

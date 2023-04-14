@@ -45,11 +45,12 @@ const BioSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        I'm a fullstack developer from Stockholm, Sweden, who combines his
-        creative energy and passion for web development to build beautiful and
-        functional web applications. By using my knowledge from studying
-        psychology, I create intuitive and user-friendly interfaces, while also
-        ensuring that the code is clean, reasonable and easy to maintain.
+        I'm a fullstack developer from Stockholm, Sweden, currently employed at
+        Bright Energy AB. I combine my creative energy and passion for web
+        development to build beautiful and functional web applications. By
+        leveraging the knowledge and interest I have in psychology, I create
+        intuitive and user-friendly interfaces, while also ensuring that the
+        code is clean, reasonable and easy to maintain.
       </Text>
 
       <Text>
@@ -58,9 +59,9 @@ const BioSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        Working as a professional developer since 2021, currently employed at
-        Bright Energy AB. My role mainly involves B2B integrations and
-        mobile/web development. I'm also development lead for Bright Bridge - an
+        I have been working as a professional developer since 2021 and my
+        current role is mainly focused on B2B integrations and mobile/web
+        development. I'm also development lead for Bright Bridge - an
         administration tool for Bright Energy AB and its clients.
       </Text>
     </Section>
