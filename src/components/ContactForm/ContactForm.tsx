@@ -257,7 +257,6 @@ export const ContactForm: FunctionComponent = () => {
         <p className='input-group'>
           <label htmlFor='name'>Name</label>
           <input
-            autoFocus
             id='name'
             type='text'
             name='name'
