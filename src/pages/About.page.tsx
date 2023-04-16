@@ -17,29 +17,24 @@ type ListItem = {
 const skills: SkillsItem[] = [
   {
     title: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
+    items: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     title: 'Frameworks',
     items: [
       'React',
-      'React Native',
-      'Next.js',
       'Node.js',
       'Express',
       'MongoDB',
       'Redux',
-      'Redux Toolkit',
       'React Query',
-      'React Router',
       'Styled Components',
-      'Sass',
       'Jest',
     ],
   },
   {
     title: 'Tools',
-    items: ['Git', 'GitHub', 'Visual Studio Code', 'ChatGPT', 'Figma'],
+    items: ['Git', 'GitHub', 'Visual Studio Code', 'Figma'],
   },
 ];
 
@@ -49,7 +44,7 @@ const experiences: ListItem[] = [
     company: 'Bright Energy AB',
     date: 'Apr 2022 - Present',
     description:
-      'Mainly B2B integrations and mobile/web development. Development lead for Bright Bridge - an administration tool for Bright Energy AB and its clients.',
+      'Work mainly focused on B2B integrations and mobile/web development. Also development lead for Bright Bridge - an administration tool for Bright Energy AB and its clients.',
   },
   {
     title: 'Consultant',
@@ -156,18 +151,19 @@ export const AboutPage: FunctionComponent = () => {
         <Text variant='h2'>About me</Text>
         <Text>
           I'm passionate about programming and software architecture, and care
-          deeply about the quality of my work. I strive to create the best
-          possible solutions, whether it be in terms of user experience,
-          performance or maintainability.
+          deeply about the quality and impact of my work. While I tend to be
+          very thorough and detail-oriented, I always try to keep the big
+          picture in mind. I strive to create the best possible solutions both
+          in terms of user experience, performance and maintainability, and I'm
+          always looking for ways to improve my skills and knowledge.
         </Text>
 
         <Text>
-          I use my analytical and creative talents to solve problems, and I'm
-          constantly looking for ways to improve my skills and knowledge.
-          Besides programming, I'm also interested in psychology, which I
+          Besides programming I also have an interested in psychology which I
           studied part-time in 2019. I make use of my knowledge from those
           studies in my work as a developer, as I believe that understanding how
-          people think is a crucial part of creating good software.
+          people think and how the mind works are crucial parts of creating
+          great web applications.
         </Text>
       </Section>
 

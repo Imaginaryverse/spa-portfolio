@@ -23,7 +23,7 @@ const StyledAvatar = styled.img`
   height: 5rem;
   border-radius: 50%;
 
-  outline: 2px solid ${({ theme }) => theme.colors.body.border};
+  border: 2px solid ${({ theme }) => theme.colors.body.border};
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 
   transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
@@ -45,24 +45,21 @@ const BioSection: FunctionComponent = () => {
       </Text>
 
       <Text>
-        I'm a fullstack developer from Stockholm, Sweden, currently employed at
-        Bright Energy AB. I combine my creative energy and passion for web
-        development to build beautiful and functional web applications. By
-        leveraging the knowledge and interest I have in psychology, I create
-        intuitive and user-friendly interfaces, while also ensuring that the
-        code is clean, reasonable and easy to maintain.
+        I'm a fullstack developer from Stockholm, Sweden, who combines his
+        creative energy and passion for programming to produce high-quality code
+        and great user experiences.
+      </Text>
+
+      <Text>
+        In my current role at Bright Energy AB, my work mainly focuses on
+        mobile/web development and B2B integrations. I'm also development lead
+        for Bright Bridge - an administration tool for the company and its
+        clients.
       </Text>
 
       <Text>
         My tech stack includes <b>React</b>, <b>Node.js</b>, <b>Express</b>,{' '}
         <b>MongoDB</b>, and <b>TypeScript</b>.
-      </Text>
-
-      <Text>
-        I have been working as a professional developer since 2021 and my
-        current role is mainly focused on B2B integrations and mobile/web
-        development. I'm also development lead for Bright Bridge - an
-        administration tool for Bright Energy AB and its clients.
       </Text>
     </Section>
   );
