@@ -118,12 +118,12 @@ export const LighthouseReport: FunctionComponent = () => {
     }
 
     const interval = setInterval(() => {
-      setLoadingMsg(
-        prevMsg =>
-          LOADING_MSGS[
-            (LOADING_MSGS.indexOf(prevMsg) + 1) % LOADING_MSGS.length
-          ]
-      );
+      setLoadingMsg(prevMsg => {
+        const currentIdx = LOADING_MSGS.indexOf(prevMsg);
+        return currentIdx === LOADING_MSGS.length - 1
+          ? LOADING_MSGS[0]
+          : LOADING_MSGS[currentIdx + 1];
+      });
     }, 2250);
 
     return () => clearInterval(interval);
