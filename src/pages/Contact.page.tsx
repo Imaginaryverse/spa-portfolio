@@ -9,13 +9,11 @@ export const ContactPage: FunctionComponent = () => {
         <Text variant='h2'>Contact</Text>
 
         <Text>
-          Let's chat! I'm always interested in hearing about new opportunities
-          and projects.
-        </Text>
-
-        <Text>
-          Send a message or connect with me on{' '}
-          <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
+          Send me a message or connect with me on{' '}
+          <Anchor
+            to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'
+            target='_blank'
+          >
             LinkedIn
           </Anchor>
           .
