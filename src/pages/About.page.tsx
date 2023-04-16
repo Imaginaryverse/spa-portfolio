@@ -2,14 +2,48 @@ import React, { FunctionComponent } from 'react';
 import { Text, Section, Icon } from '@src/components/common';
 import styled from 'styled-components';
 
-type CurricumulVitaeItem = {
+type SkillsItem = {
+  title: string;
+  items: string[];
+};
+
+type ListItem = {
   title: string;
   company: string;
   date: string;
   description: string;
 };
 
-const curricumulVitae: CurricumulVitaeItem[] = [
+const skills: SkillsItem[] = [
+  {
+    title: 'Languages',
+    items: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
+  },
+  {
+    title: 'Frameworks',
+    items: [
+      'React',
+      'React Native',
+      'Next.js',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Redux',
+      'Redux Toolkit',
+      'React Query',
+      'React Router',
+      'Styled Components',
+      'Sass',
+      'Jest',
+    ],
+  },
+  {
+    title: 'Tools',
+    items: ['Git', 'GitHub', 'Visual Studio Code', 'ChatGPT', 'Figma'],
+  },
+];
+
+const experiences: ListItem[] = [
   {
     title: 'Fullstack developer',
     company: 'Bright Energy AB',
@@ -25,28 +59,36 @@ const curricumulVitae: CurricumulVitaeItem[] = [
       'Consultant at Bright Energy AB via School of Applied Technology.',
   },
   {
-    title: 'Student',
-    company: 'School of Applied Technology',
-    date: 'May 2021 - Aug 2021',
-    description:
-      'Student of the fullstack developer program at School of Applied Technology. Out of over 1000 applicants, I was one of only 30 students selected to participate in the program. The program was a 12-week full-time course which primarily focused on the JavaScript ecosystem.',
-  },
-  {
     title: 'Shop assistant',
     company: 'Hemköp',
     date: 'Nov 2016 - Apr 2021',
-    description:
-      'Shop assistant at Hemköp Örby in Stockholm. Studied psychology part-time via distance education in 2018 and programming in my spare time beginning in 2019.',
-  },
-  {
-    title: 'Student',
-    company: 'Tärna Folkhögskola',
-    date: '2014 - 2016',
-    description: 'General studies at Tärna Folkhögskola in Sala.',
+    description: 'Shop assistant at Hemköp Örby in Stockholm.',
   },
 ];
 
-const StyledCurricumulVitaeList = styled.ul`
+const education: ListItem[] = [
+  {
+    title: 'Fullstack developer program',
+    company: 'School of Applied Technology',
+    date: 'May 2021 - Aug 2021',
+    description:
+      '12-week full-time course, primarily focused on the JavaScript ecosystem. Out of over 1000 applicants, I was one of only 30 students selected to participate in the program.',
+  },
+  {
+    title: 'Psychology 1',
+    company: 'Högskolan Kristianstad',
+    date: 'Sep 2019 - Jan 2020',
+    description: 'Studied Psychology 1 at 50% via distance education.',
+  },
+  {
+    title: 'General studies',
+    company: 'Tärna Folkhögskola',
+    date: '2014 - 2016',
+    description: 'General studies at Tärna Folkhögskola in Sala. Full-time.',
+  },
+];
+
+const StyledList = styled.ul`
   width: 100%;
 
   display: flex;
@@ -57,7 +99,7 @@ const StyledCurricumulVitaeList = styled.ul`
   list-style: none;
 `;
 
-const StyledCurricumulVitaeItem = styled.li`
+const StyledListItem = styled.li`
   width: 100%;
   padding: ${({ theme }) => theme.spacing.L};
   padding-right: 0;
@@ -101,6 +143,10 @@ const StyledCurricumulVitaeItem = styled.li`
       transform: translateY(-50%) scale(1.25);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    padding: ${({ theme }) => `${theme.spacing.M} ${theme.spacing.L}`};
+  }
 `;
 
 export const AboutPage: FunctionComponent = () => {
@@ -119,7 +165,7 @@ export const AboutPage: FunctionComponent = () => {
           I use my analytical and creative talents to solve problems, and I'm
           constantly looking for ways to improve my skills and knowledge.
           Besides programming, I'm also interested in psychology, which I
-          studied part-time in 2018. I make use of my knowledge from those
+          studied part-time in 2019. I make use of my knowledge from those
           studies in my work as a developer, as I believe that understanding how
           people think is a crucial part of creating good software.
         </Text>
@@ -131,9 +177,9 @@ export const AboutPage: FunctionComponent = () => {
           Experience
         </Text>
 
-        <StyledCurricumulVitaeList>
-          {curricumulVitae.map((item, index) => (
-            <StyledCurricumulVitaeItem key={index}>
+        <StyledList>
+          {experiences.map((item, index) => (
+            <StyledListItem key={index}>
               <Text variant='h4'>
                 {item.title} ({item.company})
               </Text>
@@ -141,9 +187,46 @@ export const AboutPage: FunctionComponent = () => {
                 {item.date}
               </Text>
               <Text>{item.description}</Text>
-            </StyledCurricumulVitaeItem>
+            </StyledListItem>
           ))}
-        </StyledCurricumulVitaeList>
+        </StyledList>
+      </Section>
+
+      <Section>
+        <Text variant='h3'>
+          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+          Education
+        </Text>
+
+        <StyledList>
+          {education.map((item, index) => (
+            <StyledListItem key={index}>
+              <Text variant='h4'>
+                {item.title} ({item.company})
+              </Text>
+              <Text variant='h5' fontWeight='bold'>
+                {item.date}
+              </Text>
+              <Text>{item.description}</Text>
+            </StyledListItem>
+          ))}
+        </StyledList>
+      </Section>
+
+      <Section>
+        <Text variant='h3'>
+          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+          Skills
+        </Text>
+
+        <StyledList>
+          {skills.map((item, index) => (
+            <StyledListItem key={index}>
+              <Text variant='h4'>{item.title}</Text>
+              <Text>{item.items.join(', ')}</Text>
+            </StyledListItem>
+          ))}
+        </StyledList>
       </Section>
 
       <Section>
@@ -153,7 +236,7 @@ export const AboutPage: FunctionComponent = () => {
         </Text>
 
         <Text>
-          I first got into programming in 2019 when I enrolled in Harvard
+          I first got into programming in 2020 when I enrolled in Harvard
           University's CS50 course. I have been a creative and analytical person
           my entire life, and programming seemed the perfect outlet for both of
           these sides of my personality. Thinking about problems and how to

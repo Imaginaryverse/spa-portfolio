@@ -13,6 +13,8 @@ import {
   FiChevronUp,
   FiChevronLeft,
   FiChevronRight,
+  FiCircle,
+  FiX,
 } from 'react-icons/fi';
 import styled, { DefaultTheme } from 'styled-components';
 
@@ -27,7 +29,9 @@ type FeatherIcon =
   | 'chevron-down'
   | 'chevron-up'
   | 'chevron-left'
-  | 'chevron-right';
+  | 'chevron-right'
+  | 'circle'
+  | 'x';
 
 const IconMap: Record<FeatherIcon, IconType> = {
   github: FiGithub,
@@ -41,6 +45,8 @@ const IconMap: Record<FeatherIcon, IconType> = {
   'chevron-up': FiChevronUp,
   'chevron-left': FiChevronLeft,
   'chevron-right': FiChevronRight,
+  circle: FiCircle,
+  x: FiX,
 };
 
 type IconProps = {
