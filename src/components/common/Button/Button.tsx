@@ -139,7 +139,7 @@ const StyledButton = styled.button<ButtonProps>`
   color: ${({ color, ghost, theme }) => applyColorStyle(color, ghost, theme)};
   background-color: ${({ color, ghost, theme }) =>
     applyBackgroundStyle(color, ghost, theme)};
-  border: 1px solid
+  border: 2px solid
     ${({ color, ghost, theme }) => applyBorderColorStyle(color, ghost, theme)};
   border-radius: ${({ theme }) => theme.borderRadius.M};
 
