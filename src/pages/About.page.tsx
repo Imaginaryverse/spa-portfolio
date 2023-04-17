@@ -159,7 +159,7 @@ export const AboutPage: FunctionComponent = () => {
         </Text>
 
         <Text>
-          Besides programming I also have an interested in psychology which I
+          Besides programming I also have an interest in psychology which I
           studied part-time in 2019. I make use of my knowledge from those
           studies in my work as a developer, as I believe that understanding how
           people think and how the mind works are crucial parts of creating
