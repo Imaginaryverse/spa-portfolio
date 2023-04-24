@@ -11,6 +11,10 @@ const StyledSection = styled.section<{ gap?: keyof DefaultTheme['spacing'] }>`
   justify-content: flex-start;
 
   gap: ${({ theme, gap }) => theme.spacing[gap || 'M']};
+
+  background-color: ${({ theme }) => theme.colors.body.background};
+
+  transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 `;
 
 type SectionProps = {

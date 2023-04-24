@@ -15,6 +15,10 @@ const StyledFooter = styled.footer`
 
   // place at bottom of page
   margin-top: auto;
+
+  background-color: ${({ theme }) => theme.colors.body.background};
+
+  transition: all ${({ theme }) => theme.transitionDuration.medium} ease-in-out;
 `;
 
 const StyledFooterContent = styled.div`
