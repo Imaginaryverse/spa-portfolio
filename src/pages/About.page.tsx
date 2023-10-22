@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
-import { Text, Section, Icon } from '@src/components/common';
-import styled from 'styled-components';
+import React, { FunctionComponent } from "react";
+import { Text, Section, Icon } from "@src/components/common";
+import styled from "styled-components";
 
 type SkillsItem = {
   title: string;
@@ -16,70 +16,79 @@ type ListItem = {
 
 const skills: SkillsItem[] = [
   {
-    title: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+    title: "Languages",
+    items: ["TypeScript", "JavaScript", "HTML", "CSS"],
   },
   {
-    title: 'Frameworks',
+    title: "Frameworks",
     items: [
-      'React',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'Redux',
-      'React Query',
-      'Styled Components',
-      'Jest',
+      "React",
+      "React Native",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "React Query",
+      "Styled Components",
+      "Material UI",
+      "Jest",
     ],
   },
   {
-    title: 'Tools',
-    items: ['Git', 'GitHub', 'Visual Studio Code', 'Figma'],
+    title: "Tools",
+    items: ["Git", "GitHub", "Visual Studio Code", "Figma"],
   },
 ];
 
 const experiences: ListItem[] = [
   {
-    title: 'Fullstack developer',
-    company: 'Bright Energy AB',
-    date: 'Apr 2022 - Present',
+    title: "Platform frontend engineer",
+    company: "Truesec AB",
+    date: "Sep 2023 - Present",
     description:
-      'Work mainly focused on B2B integrations and mobile/web development. Also development lead for Bright Bridge - an administration tool for Bright Energy AB and its clients.',
+      "As a platform frontend engineer at Truesec AB, my work is focused on developing and maintaining the company's digital platform.",
   },
   {
-    title: 'Consultant',
-    company: 'Bright Energy AB',
-    date: 'Aug 2021 - Apr 2022',
+    title: "Fullstack developer",
+    company: "Bright Energy AB",
+    date: "Apr 2022 - Sep 2023",
     description:
-      'Consultant at Bright Energy AB via School of Applied Technology.',
+      "Work mainly focused on B2B integrations and mobile/web development. Also development lead for Bright Bridge - an administration tool for Bright Energy AB and its clients.",
   },
   {
-    title: 'Shop assistant',
-    company: 'Hemköp',
-    date: 'Nov 2016 - Apr 2021',
-    description: 'Shop assistant at Hemköp Örby in Stockholm.',
+    title: "Consultant",
+    company: "Bright Energy AB",
+    date: "Aug 2021 - Apr 2022",
+    description:
+      "Consultant at Bright Energy AB via School of Applied Technology.",
+  },
+  {
+    title: "Shop assistant",
+    company: "Hemköp",
+    date: "Nov 2016 - Apr 2021",
+    description: "Shop assistant at Hemköp Örby in Stockholm.",
   },
 ];
 
 const education: ListItem[] = [
   {
-    title: 'Fullstack developer program',
-    company: 'School of Applied Technology',
-    date: 'May 2021 - Aug 2021',
+    title: "Fullstack developer program",
+    company: "School of Applied Technology",
+    date: "May 2021 - Aug 2021",
     description:
-      '12-week full-time course, primarily focused on the JavaScript ecosystem. Out of over 1000 applicants, I was one of only 30 students selected to participate in the program.',
+      "12-week full-time course, primarily focused on the JavaScript ecosystem. Out of over 1000 applicants, I was one of only 30 students selected to participate in the program.",
   },
   {
-    title: 'Psychology 1',
-    company: 'Högskolan Kristianstad',
-    date: 'Sep 2019 - Jan 2020',
-    description: 'Studied Psychology 1 at 50% via distance education.',
+    title: "Psychology 1",
+    company: "Högskolan Kristianstad",
+    date: "Sep 2019 - Jan 2020",
+    description: "Studied Psychology 1 at 50% via distance education.",
   },
   {
-    title: 'General studies',
-    company: 'Tärna Folkhögskola',
-    date: '2014 - 2016',
-    description: 'General studies at Tärna Folkhögskola in Sala. Full-time.',
+    title: "General studies",
+    company: "Tärna Folkhögskola",
+    date: "2014 - 2016",
+    description: "General studies at Tärna Folkhögskola in Sala. Full-time.",
   },
 ];
 
@@ -114,7 +123,7 @@ const StyledListItem = styled.li`
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     width: 0.75rem;
     height: 0.75rem;
     position: absolute;
@@ -148,7 +157,7 @@ export const AboutPage: FunctionComponent = () => {
   return (
     <React.Fragment>
       <Section>
-        <Text variant='h2'>About me</Text>
+        <Text variant="h2">About me</Text>
         <Text>
           I'm passionate about programming and software architecture, and care
           deeply about the quality and impact of my work. While I tend to be
@@ -168,18 +177,18 @@ export const AboutPage: FunctionComponent = () => {
       </Section>
 
       <Section>
-        <Text variant='h3'>
-          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+        <Text variant="h3">
+          <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
           Experience
         </Text>
 
         <StyledList>
           {experiences.map((item, index) => (
             <StyledListItem key={index}>
-              <Text variant='h4'>
+              <Text variant="h4">
                 {item.title} ({item.company})
               </Text>
-              <Text variant='h5' fontWeight='bold'>
+              <Text variant="h5" fontWeight="bold">
                 {item.date}
               </Text>
               <Text>{item.description}</Text>
@@ -189,18 +198,18 @@ export const AboutPage: FunctionComponent = () => {
       </Section>
 
       <Section>
-        <Text variant='h3'>
-          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+        <Text variant="h3">
+          <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
           Education
         </Text>
 
         <StyledList>
           {education.map((item, index) => (
             <StyledListItem key={index}>
-              <Text variant='h4'>
+              <Text variant="h4">
                 {item.title} ({item.company})
               </Text>
-              <Text variant='h5' fontWeight='bold'>
+              <Text variant="h5" fontWeight="bold">
                 {item.date}
               </Text>
               <Text>{item.description}</Text>
@@ -210,24 +219,24 @@ export const AboutPage: FunctionComponent = () => {
       </Section>
 
       <Section>
-        <Text variant='h3'>
-          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+        <Text variant="h3">
+          <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
           Skills
         </Text>
 
         <StyledList>
           {skills.map((item, index) => (
             <StyledListItem key={index}>
-              <Text variant='h4'>{item.title}</Text>
-              <Text>{item.items.join(', ')}</Text>
+              <Text variant="h4">{item.title}</Text>
+              <Text>{item.items.join(", ")}</Text>
             </StyledListItem>
           ))}
         </StyledList>
       </Section>
 
       <Section>
-        <Text variant='h3'>
-          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+        <Text variant="h3">
+          <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
           Programming journey
         </Text>
 
@@ -252,14 +261,21 @@ export const AboutPage: FunctionComponent = () => {
         <Text>
           Upon graduating from the program, I was hired as a consultant at
           Bright Energy AB, and became a full-time developer in August 2021. I
-          now work in a variety of domains, and I'm development lead for Bright
-          Bridge - an administration tool for Bright Energy AB and its clients.
+          worked in a variety of domains, and eventually became development lead
+          for Bright Bridge - an administration tool for Bright Energy AB and
+          its clients.
+        </Text>
+
+        <Text>
+          In September 2023, I was hired as a platform frontend engineer at
+          Truesec AB, where I'm currently working. My work is focused on
+          developing and maintaining the company's digital platform.
         </Text>
       </Section>
 
       <Section>
-        <Text variant='h3'>
-          <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+        <Text variant="h3">
+          <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
           Hobbies
         </Text>
 

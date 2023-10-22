@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import styled from 'styled-components';
-import { Anchor, Icon, Section, Text } from '@src/components/common';
-import avatar from '@src/assets/avatar.png';
+import React, { FunctionComponent } from "react";
+import styled from "styled-components";
+import { Anchor, Icon, Section, Text } from "@src/components/common";
+import avatar from "@src/assets/avatar.png";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -39,27 +39,21 @@ const StyledSubHeader = styled.div`
 const BioSection: FunctionComponent = () => {
   return (
     <Section>
-      <Text variant='h3'>
-        <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+      <Text variant="h3">
+        <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
         Biography
       </Text>
 
       <Text>
         I'm a fullstack developer from Stockholm, Sweden, who combines his
         creative energy and passion for programming to produce high-quality code
-        and great user experiences.
+        and great user experiences. I take pride in my work and strive to
+        improve myself and my skills every day.
       </Text>
 
       <Text>
-        In my current role at Bright Energy AB, my work mainly focuses on
-        mobile/web development and B2B integrations. I'm also development lead
-        for Bright Bridge - an administration tool for the company and its
-        clients.
-      </Text>
-
-      <Text>
-        My tech stack includes <b>React</b>, <b>Node.js</b>, <b>Express</b>,{' '}
-        <b>MongoDB</b>, and <b>TypeScript</b>.
+        In my current role as Platform Frontend Engineer at Truesec, I'm part of
+        a team that develops and maintains the company's digital platform.
       </Text>
     </Section>
   );
@@ -68,13 +62,13 @@ const BioSection: FunctionComponent = () => {
 const ContactSection: FunctionComponent = () => {
   return (
     <Section>
-      <Text variant='h3'>
-        <Icon name='chevron-right' margin={{ right: '0.5rem' }} />
+      <Text variant="h3">
+        <Icon name="chevron-right" margin={{ right: "0.5rem" }} />
         Contact
       </Text>
       <Text>
-        Send me a <Anchor to='/contact'>message</Anchor> or connect with me on{' '}
-        <Anchor to='https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/'>
+        Send me a <Anchor to="/contact">message</Anchor> or connect with me on{" "}
+        <Anchor to="https://www.linkedin.com/in/anton-bertilsson-3ab1ba66/">
           LinkedIn
         </Anchor>
         .
@@ -87,10 +81,10 @@ export const HomePage: FunctionComponent = () => {
   return (
     <React.Fragment>
       <StyledHeader>
-        <StyledAvatar src={avatar} alt='Anton Bertilsson' />
+        <StyledAvatar src={avatar} alt="Anton Bertilsson" />
         <StyledSubHeader>
-          <Text variant='h1'>Anton Bertilsson</Text>
-          <Text variant='h2'>Fullstack developer</Text>
+          <Text variant="h1">Anton Bertilsson</Text>
+          <Text variant="h2">Fullstack developer</Text>
         </StyledSubHeader>
       </StyledHeader>
 
